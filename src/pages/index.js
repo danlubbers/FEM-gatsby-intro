@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import Hero from '../components/hero';
 import usePosts from '../hooks/use-posts';
-import postPreview from '../components/post-preview';
+import Insta from '../components/insta';
 import PostPreview from '../components/post-preview';
 
 export default () => {
@@ -19,6 +19,7 @@ export default () => {
                 <PostPreview key={post.slug} post={post}></PostPreview>
                 // <pre>{JSON.stringify(post, null, 2)}</pre>
             ))}
+            <Insta />
         </Layout>
         </>
 );}
