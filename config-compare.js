@@ -15,9 +15,7 @@ module.exports = {
           defaultLayouts: {
             default: require.resolve('./src/components/layout.js'),
           },
-          gatsbyRemarkPlugins: [
-            { resolve: 'gatsby-remark-images'}
-          ]
+          gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
         },
       },
       {
@@ -37,8 +35,8 @@ module.exports = {
       {
         resolve: 'gatsby-source-instagram',
         options: {
-          username: 'danlubbers'
-        }
+          username: 'gatsbyjs',
+        },
       },
       {
         resolve: 'gatsby-plugin-webpack-bundle-analyzer',
@@ -47,7 +45,7 @@ module.exports = {
           disable: !process.env.ANALYZE_BUNDLE_SIZE,
           generateStatsFile: true,
           analyzerMode: 'static',
-        }
+        },
       },
     ],
   };
