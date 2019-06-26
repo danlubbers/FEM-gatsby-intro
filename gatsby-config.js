@@ -4,23 +4,35 @@ module.exports = {
       description:
         'A site we built together during a full-day Frontend Masters Gatsby workshop!',
     },
-    plugins: ['gatsby-plugin-emotion', 
-    'gatsby-plugin-react-helmet',
-    {
-        // This will load all MDX files into the Layout Template
+    plugins: [
+      'gatsby-plugin-emotion',
+      'gatsby-plugin-react-helmet',
+      'gatsby-transformer-sharp',
+      'gatsby-plugin-sharp',
+      {
         resolve: 'gatsby-mdx',
         options: {
-            defaultLayouts: {
-                default: require.resolve('./src/components/layout.js')
-            },
+          defaultLayouts: {
+            default: require.resolve('./src/components/layout.js'),
+          },
+          gatsbyRemarkPlugins: [
+            { resolve: 'gatsby-remark-images'}
+          ]
         },
-    },
-    {
+      },
+      {
         resolve: 'gatsby-source-filesystem',
         options: {
-            name: 'posts',
-            path: 'posts',
-        }
-    }
-],
+          name: 'posts',
+          path: 'posts',
+        },
+      },
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: 'images',
+          path: 'images',
+        },
+      },
+    ],
   };
